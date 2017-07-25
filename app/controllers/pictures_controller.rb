@@ -29,6 +29,7 @@ class PicturesController < ApplicationController
       
       @the_source = pic.source
       @the_caption = pic.caption
+      @picture_number = pic.id
        
    render "pic_templates/show.html.erb"
    end
