@@ -14,9 +14,10 @@ class PicturesController < ApplicationController
    def show
       
       the_id_number = params["the_id"]
-      Photo.find(the_id_number).source
+      pic = Photo.find(the_id_number)
       
-      @the_source = Photo.find(the_id_number).source
+      @the_source = pic.source
+      @the_caption = pic.caption
        
    render "pic_templates/show.html.erb"
    end
