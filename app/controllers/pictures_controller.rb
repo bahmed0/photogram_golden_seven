@@ -30,6 +30,7 @@ class PicturesController < ApplicationController
       @the_source = pic.source
       @the_caption = pic.caption
       @picture_number = pic.id
+      @time_posted = Time.now.-(pic.updated_at)./(3600).to_i
        
    render "pic_templates/show.html.erb"
    end
