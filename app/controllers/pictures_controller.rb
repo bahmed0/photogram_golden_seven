@@ -49,15 +49,13 @@ class PicturesController < ApplicationController
    end
    def update_row
       
-      #  Parameters: {"the_source"=>"https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Mostar_Old_Town_Panorama_2007.jpg/640px-Mostar_Old_Town_Panorama_2007.jpg", "the_caption"=>"Bridges", "some_id"=>"148"}
-      
       the_id_number = params["some_id"]
-      pic = Photo.find(the_id_number)
+      pic = Photo.find[the_id_number]
       
       @the_source = pic.source
       @the_caption = pic.caption
       
-       @picture_number = pic.id  
+      @picture_number = pic.id  
       
        
    render "pic_templates/update_row.html.erb"
