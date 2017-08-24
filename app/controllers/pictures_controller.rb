@@ -51,12 +51,14 @@ class PicturesController < ApplicationController
    def update_row
       
       the_id_number = params["some_id"]
-      pic = Photo.find[the_id_number]
+      @pic = Photo.find[the_id_number]
       
-      @the_source = pic.source
-      @the_caption = pic.caption
+      @pic.source = params["the_source"]
+      @pic.caption = params["the_caption"]
       
-      @picture_number = pic.id  
+      @id = @pic.id 
+      
+      @pic.save
       
    redirect_to("/photos/"+@id.to_s)
    # render "pic_templates/update_row.html.erb"
