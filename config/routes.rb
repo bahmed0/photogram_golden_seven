@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root "pictures#index"
   
   # CREATE
   get("/photos/new", { :controller => "pictures", :action => "new_form" })
