@@ -53,10 +53,10 @@ class PicturesController < ApplicationController
       the_id_number = params["some_id"]
       @pic = Photo.find[the_id_number]
       
-      @pic.source = params["the_source"]
-      @pic.caption = params["the_caption"]
+      @the_source = pic.source
+      @the_caption = pic.caption
       
-      @id = @pic.id 
+      @picture_number = pic.id
       
       @pic.save
       
